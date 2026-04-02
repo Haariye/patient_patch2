@@ -3,15 +3,14 @@
   "name": "Medical Report",
   "module": "Patient Patch",
   "custom": 1,
-  "beta": 0,
   "istable": 0,
   "is_submittable": 1,
   "sort_field": "modified",
   "sort_order": "desc",
   "default_print_format": "Medical Report Print",
-  "autoname": "field:ref_no",
-  "title_field": "ref_no",
-  "search_fields": "patient, patient_name, ref_no",
+  "autoname": "naming_series:",
+  "title_field": "patient_name",
+  "search_fields": "patient, patient_name, name",
   "permissions": [
     {
       "role": "System Manager",
@@ -37,12 +36,12 @@
   ],
   "fields": [
     {
-      "fieldname": "ref_no",
-      "label": "Reference Number",
-      "fieldtype": "Data",
-      "reqd": 1,
-      "unique": 0,
-      "in_list_view": 1
+      "fieldname": "naming_series",
+      "label": "Series",
+      "fieldtype": "Select",
+      "options": "MR-.YYYY.-.#####",
+      "default": "MR-.YYYY.-.#####",
+      "reqd": 1
     },
     {
       "fieldname": "patient",
@@ -56,65 +55,59 @@
       "fieldname": "patient_name",
       "label": "Patient Name",
       "fieldtype": "Data",
-      "read_only": 1,
-      "fetch_from": "patient.patient_name"
+      "read_only": 1
     },
     {
       "fieldname": "patient_id",
       "label": "Patient ID",
       "fieldtype": "Data",
-      "read_only": 1,
-      "fetch_from": "patient.name"
+      "read_only": 1
     },
     {
       "fieldname": "age",
       "label": "Age",
       "fieldtype": "Data",
-      "read_only": 1,
-      "fetch_from": "patient.age"
+      "read_only": 1
     },
     {
       "fieldname": "sex",
       "label": "Sex",
       "fieldtype": "Data",
-      "read_only": 1,
-      "fetch_from": "patient.sex"
+      "read_only": 1
     },
     {
       "fieldname": "report_date",
       "label": "Report Date",
       "fieldtype": "Date",
-      "default": "today",
       "reqd": 1
     },
     {
-      "fieldname": "due_date",
-      "label": "Due Date",
-      "fieldtype": "Date"
-    },
-    {
-      "fieldname": "diagnosis",
-      "label": "Diagnosis",
-      "fieldtype": "Small Text",
-      "reqd": 0
-    },
-    {
-      "fieldname": "treatment",
-      "label": "Treatment",
-      "fieldtype": "Small Text",
-      "reqd": 0
-    },
-    {
-      "fieldname": "recommendation",
-      "label": "Recommendations",
-      "fieldtype": "Small Text",
-      "reqd": 0
+      "fieldname": "consultation_reference",
+      "label": "Consultation Reference",
+      "fieldtype": "Link",
+      "options": "Patient Encounter",
+      "read_only": 1
     },
     {
       "fieldname": "doctor",
       "label": "Doctor",
       "fieldtype": "Link",
       "options": "Healthcare Practitioner"
+    },
+    {
+      "fieldname": "diagnosis",
+      "label": "Diagnosis / Examination",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "treatment",
+      "label": "Treatment",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "recommendation",
+      "label": "Recommendations",
+      "fieldtype": "Long Text"
     }
   ],
   "allow_import": 1,

@@ -5,37 +5,7 @@
   "custom_format": 1,
   "doc_type": "Medical Report",
   "label": "Medical Report Print",
-  "html": """
-  <div style=\"padding: 20px; font-family: serif;\">
-    <h2 style=\"text-align: center; margin-bottom: 20px;\">Medical Report</h2>
-    <table style=\"width: 100%; border-collapse: collapse; margin-bottom: 20px;\">
-      <tr>
-        <td style=\"width: 25%; font-weight: bold;\">Patient:</td>
-        <td style=\"width: 25%;\">{{ doc.patient_name }}</td>
-        <td style=\"width: 25%; font-weight: bold;\">Sex:</td>
-        <td style=\"width: 25%;\">{{ doc.sex }}</td>
-      </tr>
-      <tr>
-        <td style=\"font-weight: bold;\">Age:</td>
-        <td>{{ doc.age }}</td>
-        <td style=\"font-weight: bold;\">Report Date:</td>
-        <td>{{ frappe.utils.formatdate(doc.report_date) }}</td>
-      </tr>
-      <tr>
-        <td style=\"font-weight: bold;\">Report ID:</td>
-        <td>{{ doc.name }}</td>
-        <td style=\"font-weight: bold;\">Doctor:</td>
-        <td>{{ doc.doctor }}</td>
-      </tr>
-    </table>
-    <h3>Diagnosis</h3>
-    <p>{{ doc.diagnosis or '' }}</p>
-    <h3>Treatment</h3>
-    <p>{{ doc.treatment or '' }}</p>
-    <h3>Recommendations</h3>
-    <p>{{ doc.recommendation or '' }}</p>
-  </div>
-  """,
+  "html": "<div style=\"padding: 20px; font-family: serif;\"><h2 style=\"text-align: center; margin-bottom: 20px;\">Medical Report</h2><table style=\"width: 100%; border-collapse: collapse; margin-bottom: 20px;\"><tr><td style=\"width: 25%; font-weight: bold;\">Patient:</td><td style=\"width: 25%;\">{{ doc.patient_name }}</td><td style=\"width: 25%; font-weight: bold;\">Sex:</td><td style=\"width: 25%;\">{{ doc.sex }}</td></tr><tr><td style=\"font-weight: bold;\">Age:</td><td>{{ doc.age }}</td><td style=\"font-weight: bold;\">Report Date:</td><td>{{ frappe.utils.formatdate(doc.report_date) }}</td></tr><tr><td style=\"font-weight: bold;\">Report ID:</td><td>{{ doc.name }}</td><td style=\"font-weight: bold;\">Doctor:</td><td>{{ doc.doctor }}</td></tr></table><h3>Diagnosis</h3><p>{{ doc.diagnosis or '' }}</p><h3>Treatment</h3><p>{{ doc.treatment or '' }}</p><h3>Recommendations</h3><p>{{ doc.recommendation or '' }}</p></div>",
   "align_labels_right": 0,
   "default": 1
 }
